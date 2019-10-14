@@ -1,0 +1,11 @@
+{
+  "domain": "meetjestad_sensor",
+  "name": "Meetjestad Sensor",
+  "documentation": "https://meetjescraper.online/",
+  "dependencies": [],
+  "requirements": [],
+  "homeassistant": "0.96.0",
+  "codeowners": [
+    "@chandrashekar-nallamilli"
+  ]
+}
