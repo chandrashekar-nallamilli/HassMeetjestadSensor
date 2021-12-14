@@ -12,10 +12,11 @@ from homeassistant.components.sensor import PLATFORM_SCHEMA
 from homeassistant.components.weather import (
     ATTR_WEATHER_HUMIDITY, ATTR_WEATHER_TEMPERATURE)
 from homeassistant.const import (
-     CONF_NAME, HTTP_OK, TEMP_CELSIUS, CONF_MONITORED_CONDITIONS)
+     CONF_NAME, TEMP_CELSIUS, CONF_MONITORED_CONDITIONS)
 import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers.entity import Entity
 from homeassistant.util import Throttle
+from http import HTTPStatus
 
 _LOGGER = getLogger(__name__)
 
@@ -110,7 +111,7 @@ class MeetjestadData:
         _LOGGER.debug("------- Updating AEMET sensor")
         params = {'sensor': self._station_id, 'limit': 2}
         main_rsp = requests.get(self.API_URL_BASE, params=params)
-        if main_rsp.status_code != HTTP_OK:
+        if main_rsp.status_code != HTTPStatus.OK:
             _LOGGER.error("Invalid response: %s", main_rsp.status_code)
             return
 
