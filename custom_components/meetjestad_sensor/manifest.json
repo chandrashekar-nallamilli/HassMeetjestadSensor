@@ -1,8 +1,11 @@
 {
   "domain": "meetjestad_sensor",
   "name": "Meetjestad Sensor",
+  "version": "0.2",
   "documentation": "https://meetjescraper.online/",
+  "issue_tracker": "https://github.com/chandrashekar-nallamilli/HassMeetjestadSensor/releases",
   "dependencies": [],
+  "config_flow": false,
   "requirements": [],
   "homeassistant": "0.96.0",
   "codeowners": [
